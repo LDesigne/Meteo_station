@@ -25,7 +25,7 @@ const int port = 8283;    //Порт через который мы подклю
 #include <microDS18B20.h>
 #include <GyverPortal.h>
 
-GyverPortal portal;
+//GyverPortal portal;
 //TimerMs tmr(300000, 1, 1);   //Раз в 5мин
 //TimerMs tmr(600000, 1, 1);  //Раз в 10мин
 MicroDS18B20<SENSOR_PIN> sensor;  // датчик на D2

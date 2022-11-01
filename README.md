@@ -35,6 +35,10 @@ ____
 #define SENSOR_PIN D2
 ```
 ___
+## Ссылки для менеджера плат
++ ESP8266- http://arduino.esp8266.com/stable/package_esp8266com_index.json
++ ESP32- https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+___
 ## Формат пакета данных
 (Для тех кто захочет добавить свои датчики)
 ```C++
