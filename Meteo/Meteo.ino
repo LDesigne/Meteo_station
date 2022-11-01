@@ -10,8 +10,8 @@
 #define BME_CS 10
 #define SEALEVELPRESSURE_HPA (1013.25)
 //------------------ Настройки нашего WiFi
-const char* ssid = "811_2.4G";   //имя нашей сети
-const char* password = "Huawei09";    //пароль от нее
+const char* ssid = "имя нашей сети";   //имя нашей сети
+const char* password = "пароль";    //пароль от нее
 //------------------
 const char* host = "narodmon.ru";   //Адрес сервера
 const int port = 8283;    //Порт через который мы подключаемся
