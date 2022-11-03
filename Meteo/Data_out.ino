@@ -58,7 +58,7 @@ void Send() {
   Serial.print("connecting to ");   // подключаемся к серверу
   Serial.println(host);
 
-  // Use WiFiClient class to create TCP connections
+  // Используем WiFiClient для создания TCP соединения
   WiFiClient client;
 
   if (!client.connect(host, port)) {
