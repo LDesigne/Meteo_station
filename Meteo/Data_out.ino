@@ -76,6 +76,8 @@ void Send() {
   client.println();
 
   if (DT == 1) {
+    bme.oneMeasurement();                          // Если используем принудительный мод - необходимо будить датчик для проведения измерения
+    while (bme.isMeasuring());                     // И дождаться окончания текущего измерения , чтобы не взять устаревшие данные
 
     client.print("#");
     client.print("T1");
@@ -92,38 +94,23 @@ void Send() {
     client.print("#");
     client.print("HPA");
     client.print("#");
-    Serial.print(bme.readPressure());
-    client.println(bme.readPressure());
-
+    Serial.print(pressureToMmHg(bme.readPressure()));
+    client.println(pressureToMmHg(bme.readPressure()));
+/*
     client.print("#");
     client.print("ALT");
     client.print("#");
-    Serial.print(bme.readAltitude(SEALEVELPRESSURE_HPA));
-    client.println(bme.readAltitude(SEALEVELPRESSURE_HPA));
-
+    Serial.print(pressureToAltitude(pressure));
+    client.println(pressureToAltitude(pressure));
+*/
     client.print("#");
     client.print("H");
     client.print("#");
     Serial.print(bme.readHumidity());
     client.println(bme.readHumidity());
-
-    client.print("#");
-    client.print(sensor.getTemp());
-    Serial.print(sensor.getTemp());
-    client.println("##");
     
   } else if (DT == 0) {
     sensor.requestTemp(); // забераем температуру с градусника
-    /* if (sensor.readAddress(address)) {
-       client.print("#");
-       for (uint8_t i = 0; i < 8; i++) {
-         Serial.print("0x");
-         Serial.print(address[i], HEX);  // Выводим адрес
-         client.print(address[i], HEX);  // Выводим адрес
-         if (i < 7) Serial.print(", ");
-       }
-      }
-    */
     delay (70);
     sensor.readTemp();
     client.print("#");

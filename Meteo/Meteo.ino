@@ -18,37 +18,21 @@ const int port = 8283;    //Порт через который мы подклю
 
 
 //==========БИБЛЫ==========
-//#include <ESP8266WiFi.h>
-#include <Adafruit_Sensor.h>
-#include <Adafruit_BME280.h>
-//#include <TimerMs.h>
+#include <GyverBME280.h>
 #include <microDS18B20.h>
 #include <GyverPortal.h>
 
 //GyverPortal portal;
-//TimerMs tmr(300000, 1, 1);   //Раз в 5мин
-//TimerMs tmr(600000, 1, 1);  //Раз в 10мин
+GyverBME280 bme; 
 MicroDS18B20<SENSOR_PIN> sensor;  // датчик на D2
-Adafruit_BME280 bme; // I2C
-//Adafruit_BME280 bme(BME_CS); // hardware SPI
-//Adafruit_BME280 bme(BME_CS, BME_MOSI, BME_MISO, BME_SCK); // software SPI
-//uint8_t address[8];
 
 void setup() {
   Serial.begin(115200);
-  //tmr.start();   //Запускаем таймер
-  //Send();   //Отправляем данные на сервер и в консоль
-  //serialPrint();
- // if(BTN PIN){
-    
- // }
+  bme.setMode(FORCED_MODE);                      // По возможности используем принудительный режим с редким опросом
+    bme.begin();                                      // Если на этом настройки окончены - инициализируем датчик
 }
 
 void loop() {
-  //if (tmr.tick()) {   //Проверяем значения таймера
   Send(); //Отправляем данные
-  //Serial_Print();
   ESP.deepSleep(T1 * 6 * 10 ^ 7); //уходим в сон
-  // serialPrint();
-  //}
 }
