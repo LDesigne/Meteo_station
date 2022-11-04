@@ -1,7 +1,7 @@
 //==========НАСТРОЙКИ==========
 #define SENSOR_PIN D2     //пин подключения дачика DS18B20
-#define T1 7     //время отправки 7мин
-#define DT 0     //Используемый датчик 0 -(DS18B20) , 1 -(BME280)
+const byte Time = 7 ;    //время отправки 7мин
+const bool DT = 0 ;     //Используемый датчик 0 -(DS18B20) , 1 -(BME280)
 //#define BTN PIN D7
 //--------------- Настройка датчика BME280
 #define BME_SCK 13
@@ -34,5 +34,5 @@ void setup() {
 
 void loop() {
   Send(); //Отправляем данные
-  ESP.deepSleep(T1 * 6 * 10 ^ 7); //уходим в сон
+  ESP.deepSleep(Time/6e7); //уходим в сон
 }
