@@ -34,5 +34,5 @@ void setup() {
 
 void loop() {
   Send(); //Отправляем данные
-  ESP.deepSleep(Time/6e7); //уходим в сон
+  ESP.deepSleep(Time*6e7); //уходим в сон
 }
