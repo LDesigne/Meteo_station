@@ -82,7 +82,7 @@ void Send() {
     client.print("#");
     client.print("T1");
     client.print("#");
-    Serial.print(bme.readTemperature());
+    Serial.println(bme.readTemperature());
     client.println(bme.readTemperature());
     /*
          client.print("#");
@@ -94,7 +94,7 @@ void Send() {
     client.print("#");
     client.print("HPA");
     client.print("#");
-    Serial.print(pressureToMmHg(bme.readPressure()));
+    Serial.println(pressureToMmHg(bme.readPressure()));
     client.println(pressureToMmHg(bme.readPressure()));
 /*
     client.print("#");
@@ -106,7 +106,7 @@ void Send() {
     client.print("#");
     client.print("H");
     client.print("#");
-    Serial.print(bme.readHumidity());
+    Serial.println(bme.readHumidity());
     client.println(bme.readHumidity());
     
   } else if (DT == 0) {
@@ -117,7 +117,7 @@ void Send() {
     client.print("T2");
     client.print("#");
     client.print(sensor.getTemp());
-    Serial.print(sensor.getTemp());
+    Serial.println(sensor.getTemp());
     client.println("##");
   }
 

@@ -2,20 +2,12 @@
 #define SENSOR_PIN D2     //пин подключения дачика DS18B20
 const byte Time = 7 ;    //время отправки 7мин
 const bool DT = 0 ;     //Используемый датчик 0 -(DS18B20) , 1 -(BME280)
-//#define BTN PIN D7
-//--------------- Настройка датчика BME280
-#define BME_SCK 13
-#define BME_MISO 12
-#define BME_MOSI 11
-#define BME_CS 10
-#define SEALEVELPRESSURE_HPA (1013.25)
 //------------------ Настройки нашего WiFi
 const char* ssid = "имя нашей сети";   //имя нашей сети
 const char* password = "пароль";    //пароль от нее
 //------------------
 const char* host = "narodmon.ru";   //Адрес сервера
 const int port = 8283;    //Порт через который мы подключаемся
-
 
 //==========БИБЛЫ==========
 #include <GyverBME280.h>

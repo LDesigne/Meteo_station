@@ -25,10 +25,8 @@ const char* password = "пароль";    //пароль от нее
 ## Пины подключения датчиков
 + BME280
 ```C++
-#define BME_SCK 13
-#define BME_MISO 12
-#define BME_MOSI 11
-#define BME_CS 10
+SCL – D1
+SDA – D2
 ```
 + Ds18b20
 ```C++
