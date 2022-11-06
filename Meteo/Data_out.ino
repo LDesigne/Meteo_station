@@ -108,6 +108,7 @@ void Send() {
     client.print("#");
     Serial.println(bme.readHumidity());
     client.println(bme.readHumidity());
+    client.println("##");
     
   } else if (DT == 0) {
     sensor.requestTemp(); // забераем температуру с градусника
