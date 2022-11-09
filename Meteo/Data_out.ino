@@ -84,13 +84,7 @@ void Send() {
     client.print("#");
     Serial.println(bme.readTemperature());
     client.println(bme.readTemperature());
-    /*
-         client.print("#");
-          client.print("T2");
-           client.print("#");
-        client.print(sensor.getTemp());
-        Serial.print(sensor.getTemp());
-    */
+    
     client.print("#");
     client.print("HPA");
     client.print("#");
