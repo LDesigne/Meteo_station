@@ -36,10 +36,11 @@ SDA – D2
 ## Ссылки для менеджера плат
 + ESP8266- http://arduino.esp8266.com/stable/package_esp8266com_index.json
 + ESP32- https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
-___
+
 ## Для тех кто захочет добавить свои датчики
+
 ## Формат пакета данных
-(Для тех кто захочет добавить свои датчики)
+
 ```C++
 #MAC[#NAME]\n
   #mac1#value1[#time1][#name1]\n
